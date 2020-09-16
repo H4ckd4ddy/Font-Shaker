@@ -2,13 +2,6 @@
 Shake your font !
 
 
-### Build
-
-```
-docker build -t font-shaker .
-```
-
-
 ### Usage
 
 For exemple to generate shaked font named Demo and osa permutation script whith seed 8945 :
@@ -16,7 +9,7 @@ For exemple to generate shaked font named Demo and osa permutation script whith 
 ```
 docker run -v $(pwd)/input.ttf:/input.ttf\
 			 -v $(pwd)/output:/output\
-			 -it font-shaker\
+			 -it hackdaddy/font-shaker\
 			 --preserve-space\
 			 --font-name=Demo\
 			 --generate-osascript\
@@ -26,7 +19,7 @@ docker run -v $(pwd)/input.ttf:/input.ttf\
 To shake a text with the same seed :
 
 ```
-docker run -it font-shaker\
+docker run -it hackdaddy/font-shaker\
 			 --preserve-space\
 			 --seed=8945\
 			 --text='Hello world !!!'
